@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.VBox?>
+
+<SplitPane dividerPositions="0.1310483870967742" prefHeight="345.0" prefWidth="1009.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.telemetryui.telemetryui.DataChannelController">
+   <items>
+      <VBox prefHeight="178.0" prefWidth="126.0">
+         <children>
+            <ComboBox fx:id="sourceSelect" onAction="#onSourceChanged" prefWidth="150.0" promptText="Select Source" />
+         </children>
+      </VBox>
+      <LineChart fx:id="graph" animated="false" cache="true" cacheHint="SPEED" createSymbols="false" legendSide="RIGHT" scaleShape="false">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis side="LEFT" />
+         </yAxis>
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+      </LineChart>
+   </items>
+</SplitPane>
