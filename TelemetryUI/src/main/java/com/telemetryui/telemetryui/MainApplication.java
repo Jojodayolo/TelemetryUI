@@ -27,13 +27,13 @@ public class MainApplication extends Application {
 
         scrManager = new SourceManager();
 
-        if (true) {
+        if (false) {
             reader = new SerialReader(scrManager);
             readerThread = new Thread(reader, "SerialReader");
             readerThread.start();
         }
 
-        if (false) {
+        if (true) {
             gen = new DataGenerator(scrManager);
             genThread = new Thread(gen, "DataGen");
             genThread.start();
@@ -56,8 +56,8 @@ public class MainApplication extends Application {
      */
     @Override
     public void stop() throws Exception {
-        reader.running = false;
-        //gen.running = false;
+        //reader.running = false;
+        gen.running = false;
         super.stop();
     }
 
